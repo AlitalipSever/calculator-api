@@ -9,7 +9,7 @@ app.use(express.json());
 app.use("/api/calculator", calculusRoute);
 
 app.get("/healthcheck", (req, res) => {
-    res.send('running!')
+    res.send('running!!!');
 });
 
 const start = async () => {
