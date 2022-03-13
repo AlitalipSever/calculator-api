@@ -1,4 +1,5 @@
 const math = require("mathjs");
+const {re} = require("mathjs");
 
 const calculusHandler = async (req, res) => {
     const query = req.query.query;
@@ -10,11 +11,14 @@ const calculusHandler = async (req, res) => {
             const buff = Buffer.from(query, 'base64');
             const str = buff.toString('utf-8');
             result = math.evaluate(str);
-            res.status(200).json({error: false, result: result})
+            if (result === Infinity) {
+                res.status(400).json({error: true, message: "zero division error"})
+            }else{
+                res.status(200).json({error: false, result: Number(result.toFixed(2))})
+            }
         }
 
     } catch (e) {
-        console.log(e);
         res.status(400).json({error: true, message: e.message})
     }
 }
