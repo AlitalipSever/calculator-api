@@ -3,10 +3,10 @@ const app = express()
 const dotenv = require("dotenv")
 dotenv.config()
 
-const calculatorRoute = require("./routes/calculator.routes")
+const calculusRoute = require("./routes/calculus.routes")
 
 app.use(express.json());
-app.use("/api/calculator", calculatorRoute);
+app.use("/api/calculator", calculusRoute);
 
 app.get("/healthcheck", (req, res)=>{
     res.send('running!')
