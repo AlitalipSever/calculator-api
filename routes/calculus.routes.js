@@ -1,7 +1,8 @@
 const {calculusHandler} = require("../controllers/calculus.controllers");
-const router = require("express").Router()
+const validateQuery = require("../middlewares/validateResource");
+const router = require("express").Router();
 
 
-router.get("/calculus", calculusHandler)
+router.get("/calculus", validateQuery, calculusHandler);
 
 module.exports = router;
