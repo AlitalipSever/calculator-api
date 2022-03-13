@@ -1,8 +1,9 @@
-#calculator-api
+# calculator-api
 Performing mathematical operations with API get request.
 
 app running at https://calculator-ats.herokuapp.com/healthcheck
-##usage
+
+## usage
 
 math operation: `2 * (23/(3*3))- 23 * (2*3)`
 
@@ -21,14 +22,20 @@ it should return this
 }
 ```
 
-##development
+## development
+
+add .env file to main directory: 
+```.dotenv
+PORT=3000
+```
+
 with npm:
 `npm install`
 `npm run dev`
 
 with docker-dev: `docker-compose -f docker-compose.yml -f docker-compose.dev.yml up -d`
 
-##deployment to prod.
+## deployment to prod.
 Using docker and heroku:
 
 1-heroku login: `heroku container:login`
@@ -41,7 +48,7 @@ Using docker and heroku:
 
 5-release: `heroku container:release web --app calculator-ats`
 
-##Postman Collection
+## Postman Collection
 ```json
 {
 	"info": {
